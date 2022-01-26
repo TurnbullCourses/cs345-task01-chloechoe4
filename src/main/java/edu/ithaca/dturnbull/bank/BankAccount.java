@@ -40,7 +40,18 @@ public class BankAccount {
 
 
     public static boolean isEmailValid(String email){
+        
         if (email.indexOf('@') == -1){
+            return false;
+        }
+        int beforeAt = email.indexOf("@") - 1;
+        if(email.contains("#")){
+            return false;
+        }
+        else if(email.contains("..")){
+            return false;
+        }
+        else if(email.indexOf(".") == beforeAt | email.indexOf("_") == beforeAt | email.indexOf("-") == beforeAt){
             return false;
         }
         else {
