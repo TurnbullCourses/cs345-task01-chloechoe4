@@ -54,6 +54,9 @@ public class BankAccount {
         else if(email.indexOf(".") == beforeAt | email.indexOf("_") == beforeAt | email.indexOf("-") == beforeAt){
             return false;
         }
+        else if(email.length() - email.indexOf(".") < 3){
+            return false;
+        }
         else {
             return true;
         }
