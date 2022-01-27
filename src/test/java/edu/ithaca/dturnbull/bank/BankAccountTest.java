@@ -30,6 +30,7 @@ class BankAccountTest {
         assertFalse(BankAccount.isEmailValid("abc-@mail.com")); //symbol before @ symbol is invalid
         assertFalse(BankAccount.isEmailValid("abcd@mail.b")); //not enough letters after the  "."
         assertFalse(BankAccount.isEmailValid("abc#def@mail.com")); //invalid symbol in email
+        assertFalse(BankAccount.isEmailValid("abcdef@mail..com")); // Equivalent class for two dots in a row
 
         
     }
