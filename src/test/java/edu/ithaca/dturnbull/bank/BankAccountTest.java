@@ -27,9 +27,9 @@ class BankAccountTest {
         assertTrue(BankAccount.isEmailValid( "a@b.com"));   // valid email address
         assertFalse( BankAccount.isEmailValid(""));         // empty string
 
-        assertFalse(BankAccount.isEmailValid("abc-@mail.com"));
-        assertFalse(BankAccount.isEmailValid("abcd@mail.b"));
-        assertFalse(BankAccount.isEmailValid("abc#def@mail.com"));
+        assertFalse(BankAccount.isEmailValid("abc-@mail.com")); //symbol before @ symbol is invalid
+        assertFalse(BankAccount.isEmailValid("abcd@mail.b")); //not enough letters after the  "."
+        assertFalse(BankAccount.isEmailValid("abc#def@mail.com")); //invalid symbol in email
 
         
     }
