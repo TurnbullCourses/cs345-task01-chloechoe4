@@ -43,7 +43,6 @@ class BankAccountTest {
         assertFalse(BankAccount.isEmailValid("abc#def@mail.com")); //invalid symbol in email
         assertFalse(BankAccount.isEmailValid("abcdef@mail..com")); // Equivalent class for two dots in a row
         assertFalse(BankAccount.isEmailValid("abcdef@mail")); // no domain
-        assertFalse(BankAccount.isEmailValid("abcdef@mail-.com")); // Invalid Symbol in domain
         assertFalse(BankAccount.isEmailValid(".abcdef@mail.com")); // Invald opening character
 
 
