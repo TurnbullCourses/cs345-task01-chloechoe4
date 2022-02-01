@@ -89,7 +89,7 @@ class BankAccountTest {
         assertEquals("a@b.com", bankAccount.getEmail());
         assertEquals(200, bankAccount.getBalance(), 0.001);
         //check for exception thrown correctly
-        assertThrows(IllegalArgumentException.class, ()-> new BankAccount("", 100));
+        assertThrows(IllegalArgumentException.class, ()-> new BankAccount("", 100)); //valid
         assertThrows(IllegalArgumentException.class, () -> new BankAccount("abc@mail.com", -400));//invalid amount because negative
         assertThrows(IllegalArgumentException.class, () -> new BankAccount("abc@mail.com.com", -20.3285));//invalid amount because negative with too many decimals
     }
