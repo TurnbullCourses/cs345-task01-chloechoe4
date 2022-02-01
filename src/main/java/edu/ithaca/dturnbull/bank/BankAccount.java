@@ -58,7 +58,11 @@ public class BankAccount {
         }
     }
 
-
+/**
+     * @post checks if email address entered is valid
+     * if email address invalid return false
+     * 
+     */
     public static boolean isEmailValid(String email){
 
         if (email.indexOf('@') == -1){
@@ -93,6 +97,11 @@ public class BankAccount {
         }
     }
 
+    /**
+     * @post checks if amount entered is valid
+     * if amount is invalid (negative, etc) throws exception or returns false
+     * 
+     */
     public static boolean isAmountValid(double amount) throws IllegalArgumentException{
         if(amount < 0){
             throw new IllegalArgumentException("Please enter a valid amount");
@@ -105,6 +114,11 @@ public class BankAccount {
         }
     }
 
+    /**
+     * @post deposits money if amount is valid
+     * throws exception if amount is invalid
+     * 
+     */
     public void deposit(double amount) throws IllegalArgumentException{
         if(isAmountValid(amount)){
             balance += amount;
@@ -114,7 +128,11 @@ public class BankAccount {
         }
     }
 
-
+/**
+     * @post if amount is valid, transfers amount
+     * if amount is invalid, throw exception
+     * 
+     */
     public void transfer(BankAccount bank, double amount) throws IllegalArgumentException, InsufficientFundsException{
         if(isAmountValid(amount)){
             withdraw(amount);
