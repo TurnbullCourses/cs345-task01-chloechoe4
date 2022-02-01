@@ -115,13 +115,13 @@ public class BankAccount {
     }
 
 
-    public void transfer(BankAccount bank, double amount) throws InsufficientFundsException{
+    public void transfer(BankAccount bank, double amount) throws IllegalArgumentException, InsufficientFundsException{
         if(isAmountValid(amount)){
             withdraw(amount);
             bank.deposit(amount);
         }
         else{
-            throw new InsufficientFundsException("Amount not valid");
+            throw new IllegalArgumentException("Amount not valid");
         }
     }
 
